@@ -91,7 +91,11 @@ export default {
       default: 'text'   // text,picture,picture-card
     },
     httpRequest: Function,
-    disabled: Boolean
+    disabled: Boolean,
+    showUpload: {
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
@@ -239,6 +243,7 @@ export default {
         autoUpload: this.autoUpload,
         listType: this.listType,
         disabled: this.disabled,
+        showUpload: this.showUpload,
         'on-start': this.handleStart,
         'on-progress': this.handleProgress,
         'on-success': this.handleSuccess,
