@@ -17,6 +17,10 @@ export default {
       type: String,
       default: 'file'
     },
+    shouldShowUpload: {
+      type: Boolean,
+      default: true
+    },
     data: Object,
     headers: Object,
     withCredentials: Boolean,
@@ -170,7 +174,7 @@ export default {
     };
     data.class[`el-upload--${listType}`] = true;
     return (
-      <div {...data}>
+      <div {...data} v-show="shouldShowUpload">
         {
           drag
           ? <upload-dragger disabled={disabled} on-file={uploadFiles}>{this.$slots.default}</upload-dragger>
